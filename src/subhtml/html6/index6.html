@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html lang="UTF-8">
+<head>
+	<title>Home</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords" content=""/>
+	<link rel="stylesheet" href="css6/style.css" type="text/css" />	
+
+	<link href="http://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+<script type="text/javascript">
+function altRows(id){
+    if(document.getElementsByTagName){  
+        
+        var table = document.getElementById(id);  
+        var rows = table.getElementsByTagName("tr"); 
+         
+        for(i = 0; i < rows.length; i++){          
+            if(i % 2 == 0){
+                rows[i].className = "evenrowcolor";
+            }else{
+                rows[i].className = "oddrowcolor";
+            }      
+        }
+    }
+}
+window.onload=function(){
+    altRows('alternatecolor');
+}
+</script>
+<style type="text/css">
+table.altrowstable {
+    font-family: verdana,arial,sans-serif;
+    font-size:14px;
+    color:#333333;
+    border-width: 2px;
+    border-color: #7ad4be;
+    border-collapse: collapse;
+}
+table.altrowstable th {
+    width:180px;
+    border-width: 1px;
+    padding: 20px;
+    border-style: solid;
+    border-color: #80dac6;
+}
+table.altrowstable td {
+    width:150px;
+    border-width: 1px;
+    padding: 20px;
+    border-style: solid;
+    border-color: #4ed1bb;
+    text-align:center;
+}
+.oddrowcolor{
+    background-color:rgba(114, 187, 165, 0.8)
+}
+.evenrowcolor{
+    background-color:rgba(195, 228, 224, 0.8)
+}
+</style>
+
+</head>
+
+<body>
+	<!--header-->
+	<h1 class="new">
+		<span class="new">中药材</span><font color="white">生产购置记录上传</font>
+		<span class="new">管理平台</span></h1>
+	<!--//header-->
+	<!-- content -->
+	<div class="main-content-agile">
+		<div class="sub-main-w3">
+			<form action="#" method="post">
+				<h2> <font color="white">药材生产信息记录上传</font></h2>
+				<div class="form-style-agile">
+					<input placeholder="药材识别码" name="Name" id="identifier" type="text" required="">
+				</div>
+				
+				<div class="form-style-agile">
+					<input placeholder="产商联系方式" name="Number" type="text" required="">
+				</div>
+				<font color="white">是否质检合格</font>
+				<div class="form-style-agile">
+					<select class="category" id="_inspect">
+						<option value="true">是</option>
+						<option value="false">否</option>
+					</select>
+				</div>
+				<div class="form-style-agile">
+					<select class="category" id="_quality">
+						<option value="1">一等品</option>
+						<option value="2">二等品</option>
+						<option value="3">三等品</option>
+						<option value="4">四等品</option>
+						<option value="5">末等品</option>
+					</select>
+				</div>
+				<div class="form-style-agile">
+					<input id="datepicker" placeholder="生产日期" name="date" type="text" value="">
+				</div>
+				<div class="form-style-agile">
+					<input type="text" id="timepicker" name="time" class="timepicker form-control" placeholder="记录时间" value="" required="">
+				</div>
+				<div class="form-style-agile">
+					 <input type="text" id="Eff_Date" placeholder="有效期"/>
+				</div>
+				<div class="form-style-agile">
+					<textarea name="Message" placeholder="备注信息" required=""></textarea>
+				</div>
+				<button class="btn-produce">信息上传提交</button>
+			</form>
+			<!--购买表单-->
+			<form action="#" method="post">
+				<h2> <font color="white">购置药材信息记录</font></h2>
+				<div class="form-style-agile">
+					<input placeholder="药材识别码" name="Name" id="Buy_identifier" type="text" required="">
+				</div>
+				
+				<div class="form-style-agile">
+					<input placeholder="销售商联系方式" name="Number" type="text" required="">
+				</div>
+				<div class="form-style-agile">
+					<input placeholder="药材名称"  id="Buy_name" type="text" required="">
+				</div>
+				<div class="form-style-agile">
+					<input placeholder="采购地点" id="Buy_place" name="Buy" type="text" required="">
+				</div>				
+				<div class="form-style-agile">
+					<input id="Buy_num"  placeholder="采购量/斤" type="text"  required="">
+				</div>
+				<div class="form-style-agile">
+					<input id="Buy_date"  class="form control" placeholder="购置日期" name="date" type="text"  required="">
+				</div>
+				
+				<div class="form-style-agile">
+					<input type="text" id="Buy_time" name="time" class="Buy_time form-control" placeholder="购买时间" value="" required="">
+				</div>
+				<div class="form-style-agile">
+					<textarea name="Message" placeholder="备注信息" required=""></textarea>
+				</div>
+				<button class="btn-produce">信息上传提交</button>
+			</form>
+		</div>
+	</div>
+	
+	
+		<input type="text" id="medicineID" placeholder="药材ID" style="width:400px;font-size: 14px;color: #000;
+		font-family: 'Open Sans', sans-serif;
+		letter-spacing: 1px;
+		padding: 12px 15px;border-bottom: 2px solid #3eb060;
+    box-shadow: 0px 2px 7px 2px rgba(0, 0, 0, 0.08);">
+	
+	<button class="btn-showmed">查询药材信息</button><br>
+	<table class="altrowstable" id="alternatecolor">
+	<tr>
+    	<th>药材名称</th><th>药材数量</th><th>产地</th><th>生产日期</th><th>购买日期</th><th>有效期</th><th>品质等级</th>
+	</tr>
+	<tr>
+    	<td>Text 1A</td><td>Text 1B</td><td>Text 1C</td><td>Text 1A</td><td>Text 1B</td><td>Text 1C</td><td>Text 1C</td>
+	</tr>
+	</table>
+	
+
+
+
+	<div class="footer">
+		<p>Copyright &copy; 2020.TCMBLC All rights reserved.</p>
+	</div>
+	<!-- //footer -->
+	<link rel="stylesheet" href="css6/jquery-ui.css" />
+	<link href="css6/wickedpicker.css" rel="stylesheet" type='text/css' media="all" />
+	<!-- js -->
+	<script src="js6/jquery-2.1.4.min.js"></script>
+	
+	<script src="js6/jquery-ui.js"></script>
+	<script src="js6/wickedpicker.js"></script>
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<script>
+		$('.timepicker').wickedpicker({
+			twentyFour: false
+		});
+		$('.Buy_time').wickedpicker({
+			twentyFour: false
+		});
+	</script>
+</body>
+</html>
