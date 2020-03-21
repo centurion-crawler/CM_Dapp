@@ -15,5 +15,10 @@
   "devDependencies": {
     "lite-server": "^2.3.0",
     "webpack-dev-server": "^3.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "web3-provider-engine": "^15.0.6"
   }
 }

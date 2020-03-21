@@ -896,8 +896,8 @@
     "65535": {
       "events": {},
       "links": {},
-      "address": "0xF87C4551D8690D0FFe7929fb785fA9236d891712",
-      "transactionHash": "0xc7c8e091fc7d48a9f745422dd3463a445f9c9f8dbca893c3bc2fe7143820c43d"
+      "address": "0xb9Aaae0962D37c76F0c2249E7E91e2D23e7d3ec7",
+      "transactionHash": "0xb02431f7e894f5ad643707bf8dc8ec3a5fb5123c21fef947cf7c767895ae76fe"
     },
     "1584196166055": {
       "events": {},
@@ -997,8 +997,7 @@
     }
   },
   "schemaVersion": "3.0.23",
-  "updatedAt": "2020-03-21T03:01:34.288Z",
-  "networkType": "ethereum",
+  "updatedAt": "2020-03-21T06:16:52.537Z",
   "devdoc": {
     "methods": {}
   },
