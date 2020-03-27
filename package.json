@@ -14,6 +14,7 @@
   "license": "ISC",
   "devDependencies": {
     "lite-server": "^2.3.0",
+    "microtime": "^3.0.0",
     "webpack-dev-server": "^3.0.0"
   },
   "dependencies": {
