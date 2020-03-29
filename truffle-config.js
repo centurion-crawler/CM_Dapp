@@ -23,6 +23,7 @@ module.exports = {
       provider :new HDWalletProvider(mnemonic_ropsten,"https://ropsten.infura.io/v3/bb74b607951d4e469dde2124c6320675"),
       network_id: 3,
       gas: 7003605,
+      gasLimit: 210000000000,
       gasPrice: 100000000000,
       networkCheckTimeout: 600000
     }

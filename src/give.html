@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Test html</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <input type="text" id="increaseadmin" width="width:40%" placeholder="输入hash地址"/>
+    <button class="btn-increaseadmin" >任命为管理员</button>
+
+    <input type="text" id="checkID" width="width:40%" placeholder="输入hash地址"/>
+    <button class="btn-checkID" >查管理员ID</button>
+    <input type="text" id="reduceadmin" width="width:40%" placeholder="输入ID"/>
+    <button class="btn-reduceadmin" >取消管理员</button>
+    <!--药材生产信息上传-->
+    <br>
+    <input type="text" id="identifier" placeholder="识别码"/>
+    是否质检合格
+    <select id="_inspect">
+      <option value ="true">是</option>
+      <option value ="false">否</option>
+    </select>
+    产品品质
+    <select id="_quality">
+      <option value ="1">一等品</option>
+      <option value ="2">二等品</option>
+      <option value ="3">三等品</option>
+      <option value ="4">四等品</option>
+      <option value ="5">末等品</option>      
+    </select>
+    <input type="text" id="datepicker" placeholder="生产日期"/>
+    <input type="text" id="timepicker" placeholder="记录时间"/>
+    <input type="text" id="Eff_Date" placeholder="有效期"/>
+    
+    <button class="btn-produce">产品信息上传</button>
+    <br>
+    <!--药材购买信息上传-->
+    <input type="text" id="Buy_identifier" placeholder="识别码"/>
+    <input type="text" id="Buy_name" placeholder="药材名称"/>
+    <input type="text" id="Buy_num" placeholder="采购量/斤"/>
+    <input type="text" id="Buy_place" placeholder="采购地点"/>
+    <input type="text" id="Buy_date" placeholder="采购日期"/>
+    <input type="text" id="Buy_time" placeholder="采购时间"/>
+    <button class="btn-Purchase">药材购买信息上传</button>
+    
+    <br>
+    <!--用户注册-->
+    <input type="text" id="User_ID" placeholder="取一个您的ID名称"/>
+    <input type="text" id="User_Name" placeholder="真实姓名"/>
+    <input type="text" id="phonenum" placeholder="联系方式"/>
+    <input type="text" id="E_mail" placeholder="someone@email.com">
+    <select id="_gender">
+      <option value ="man">男</option>
+      <option value ="woman">女</option>  
+    </select>
+    <input type="text" id="datepicker1" placeholder="注册时间(年-月-日)">
+    <input type="text" id="occupation" placeholder="职业">
+    是否是医师
+    <select id="_isdoctor">
+      <option value ="true">是</option>
+      <option value ="false">否</option>  
+    </select>
+    <button class="btn-register">注册</button>
+
+    <br>
+    <!--病历上传-->
+    <input type="text" id="Doc_Name" placeholder="医生姓名"/>
+    <input type="text" id="Pat_Name" placeholder="患者姓名"/>
+    <input type="text" id="Sym" placeholder="病症及病状描述"/>
+    <input type="text" id="Date_Consult" placeholder="记录日期"/>
+    <input type="text" id="Subcribe" placeholder="医嘱"/>
+    <input type="text" id="Prescription" placeholder="处方"/>
+    <input type="text" id="Total_sum" placeholder="金额"/>
+    <button class="btn-updatesheet">病历上传</button>
+    <br>
+    <!--处方上传-->
+    <input type="text" id="materials" placeholder="配方清单"/>
+    <input type="text" id="effect" placeholder="效果"/>
+    <input type="text" id="types" placeholder="处方类型"/>
+    <button class="btn-submitpre">处方上传</button>
+    <br>
+    <button class="btn-showpages">病历清单刷新</button>
+    <br>
+    <div id="pageslist"></div>
+    <button class="btn-showuser">获取当前的账户的信息</button>
+    <div id="showuserinfo"></div>
+    <button class="btn-showpres">获取所有的处方</button>
+    <div id="showpres"></div>
+    <input type="text" id="medicineID" placeholder="识别码">
+    <button class="btn-showmed">获取药品信息</button>
+    <div id="showmed"></div>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

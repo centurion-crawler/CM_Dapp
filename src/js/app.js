@@ -9,7 +9,6 @@ App = {
   },
 
   initWeb3: async function() {
-    // Modern dapp browsers...
     if (window.ethereum) {
       App.web3Provider = window.ethereum;
       try {
@@ -25,10 +24,10 @@ App = {
     else if (window.web3) {
       App.web3Provider = window.web3.currentProvider;
     }
-    // If no injected web3 instance is detected, fall back to Ganache
-    else {
-      App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
-    }
+
+    // else {
+    //   App.web3Provider = new Web3.providers.HttpProvider('http://localhost:9545');
+    // }
     web3 = new Web3(App.web3Provider);
 
     return App.initContract();
@@ -52,7 +51,7 @@ App = {
   },
 
    bindEvents: function() {
-     //$(document).on('click', '.btn-register', App.adminregister);//点击btn-register，发生函数
+     $(document).on('click', '.btn-showmed', App.showmed);//点击btn-register，发生函数
      $(document).on('click', '.btn-increaseadmin',App.increasedamin);//获得管理员身份
      $(document).on('click', '.btn-checkID',App.checkID);//查询个账户的ID
      $(document).on('click', '.btn-reduceadmin',App.reduceadmin);//取消管理员资格
@@ -112,6 +111,7 @@ App = {
      App.contracts.CM.deployed().then(function(instance) {
        CMInstance = instance;
        var res=CMInstance.checkUserdate.call({from:account});
+       console.log(res);
        res.then(function(result){
         if (result[1]!="")
         {
@@ -230,7 +230,7 @@ App = {
         if (flag==1e9-7)
         { 
           resdata.then(function (result) {alert("任命账户ID是："+result["c"]["0"]+",请牢记！")});
-          return CMInstance.increaseOwnership(preadmin,{from : account});
+          return CMInstance.increaseOwnership.sendTransaction(preadmin);
         }
 
 
@@ -261,7 +261,7 @@ App = {
         CMInstance = instance;
         return CMInstance.checkID(adminID);
       }).then(function(results) {
-        if (results["c"]["0"]==1e9-7)
+        if (results["c"]["0"]==1e9-7 && results["c"]["0"]!=0)
         {
           alert("改账户还不是管理员哦！")
         }
@@ -421,9 +421,6 @@ App = {
       });
     });
    },
-
-
-
   userRegister :function(event)
   {
     event.preventDefault();
@@ -469,7 +466,7 @@ App = {
       else
         App.contracts.CM.deployed().then(function(instance) {
         CMInstance = instance;
-          return CMInstance.Registration(user_id,user_name,_numtxt,_email,_gender,_Date,_occup,_isdoctor,{from :account});  
+          return CMInstance.Registration.sendTransaction(user_id,user_name,_numtxt,_email,_gender,_Date,_occup,_isdoctor,{from: account,gas:210000000});  
       }).then(function(results) {
         return App.refreshCM();
       }).catch(function(err) {
@@ -477,7 +474,6 @@ App = {
       });
     });
   },
-
   medical_rec :function(event)
   {
     ;
